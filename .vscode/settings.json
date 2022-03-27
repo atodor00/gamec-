@@ -1,0 +1,10 @@
+{
+  "files.associations": {
+    "helperNotes": "javascriptreact",
+    "xstring": "cpp",
+    "ostream": "cpp",
+    "iostream": "cpp",
+    "istream": "cpp",
+    "ctime": "cpp"
+  }
+}
