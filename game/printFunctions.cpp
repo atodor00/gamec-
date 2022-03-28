@@ -52,10 +52,6 @@ int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
 int printPlayerStats(Player *me)
 {
     int stage = 1;
-    int mp = me->getMp();
-    int hp = me->getHp();
-    int lvl = me->getLvl();
-    int exp = me->getExp();
 
     cout << endl;
     if (me->getName() != "")
@@ -78,33 +74,28 @@ int printPlayerStats(Player *me)
     cout << " stage: " << stage << endl;
     cout << " mp  " << me->getMp() << endl;
     cout << " hp  " << me->getHp() << endl;
+    cout << " ap  " << me->getAp() << endl;
     cout << " lvl " << me->getLvl() << endl;
     cout << " exp " << me->getExp() << endl;
+    cout << " money " << me->getMoney() << " Tr [Trojs]" << endl;
     cout << " skill count: " << me->getSkillCount() << endl;
     printPlayerSkills(me);
     cout << ".................." << endl;
 }
 int printPlayerStats(Player *me, Enemy *them)
 {
-    int stage = 1;
 
     CLR_SCREEN;
+    printPlayerStats(me);
 
-    cout << "........me: " << me->getName() << ".........." << endl;
-    cout << " stage: " << stage << endl;
-    cout << " mp  " << me->getMp() << endl;
-    cout << " hp  " << me->getHp() << endl;
-    cout << " lvl " << me->getLvl() << endl;
-    cout << " exp " << me->getExp() << endl;
-    cout << " skill count: " << me->getSkillCount() << endl;
-    printPlayerSkills(me);
-    cout << "..................." << endl;
     cout << endl
          << "........enemy: " << them->getName() << ".........." << endl;
     cout << " mp  " << them->getMp() << endl;
+    cout << " ap  " << them->getAp() << endl;
     cout << " hp  " << them->getHp() << endl;
     cout << " lvl " << them->getLvl() << endl;
     cout << " exp " << them->getExp() << endl;
+    cout << " money " << them->getMoney() << " Tr [Trojs]" << endl;
     cout << "..................." << endl;
 }
 void printPlayerSkills(Player *me)
@@ -114,7 +105,7 @@ void printPlayerSkills(Player *me)
          << "....skill list...." << endl;
     for (int i = 0; i < me->getSkillCount(); i++)
     {
-        cout << i + 1 << " " << me->getSkill(i).getName() << endl;
+        cout << i + 1 << " " << me->getSkill(i).getName() << " dmg: " << me->getSkill(i).getphysical_damage() << endl;
     }
 }
 void fancyPrint(string s)

@@ -23,7 +23,7 @@ public:
     }
     int getMoney()
     {
-        return ap;
+        return money;
     }
     void setMoney(int moneyy)
     {

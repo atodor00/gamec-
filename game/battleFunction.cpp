@@ -80,6 +80,8 @@ int battle(Player *me, Enemy *them)
     {
         fancyPrint("you won this battle");
         me->setExp(me->getExp() + 100);
+        me->setMoney(me->getMoney() + them->getMoney() + 20);
+
         Skill fireBall("Fire Ball", MAGIC_TYPE_STRING, 100, 300, 20, 0);
         Skill swordSlach("Sword Slash", PHYSICAL_TYPE_STRING, 400, 10, 60, 0);
         Skill hellFire("Hell Fire", MAGIC_TYPE_STRING, 900, 0, 200, 0);

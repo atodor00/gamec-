@@ -35,7 +35,7 @@ int main() //###################################################################
     me.addSkill(kick);
     me.setHp(200);
     me.setExp(0);
-
+    me.setMoney(me.getMoney() + 100);
     cout << "welcome sir" << endl;
 
     while (gameEndedFlag)

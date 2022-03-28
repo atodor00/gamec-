@@ -21,6 +21,7 @@ int level1(Player *me)
     them.addSkill(howl);
     them.setHp(150);
     them.setExp(100);
+    them.setMoney(200);
     SLEEP_FOR_1000MS;
     printPlayerStats(me, &them);
 
