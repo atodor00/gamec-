@@ -44,7 +44,7 @@ using namespace std;
 class LivingObject
 {
 private:
-    int hp, xp, mp, lvl, fear_lvl, seduced_lvl;
+    int hp, xp, mp, money, lvl, fear_lvl, seduced_lvl, ap;
     string name;
 
 public:
@@ -55,6 +55,22 @@ public:
     void setHp(int hpp)
     {
         hp = hpp;
+    }
+    int getAp()
+    {
+        return ap;
+    }
+    void setAp(int app)
+    {
+        ap = app;
+    }
+    int getMoney()
+    {
+        return ap;
+    }
+    void setMoney(int moneyy)
+    {
+        money = moneyy;
     }
     int getExp()
     {
@@ -541,17 +557,14 @@ int level4(Player *me)
     {
         them.setName("Fire Dragon ILIRS follower");
         them.addSkill(dragonBreath);
-        them.setHp(4000);
+        them.setHp(2000);
         them.setExp(4000);
         if (battle(me, &them) == 0)
         {
             return 0;
         }
-        else
-        {
-            return 1;
-        }
     }
+    return 1;
 }
 void helpPrint()
 {
@@ -750,6 +763,7 @@ int battle(Player *me, Enemy *them)
         Skill TerrorRain("Terror rain", MAGIC_TYPE_STRING, 1000, 0, 3000, 0);
         Skill hellDomain("Hell domain", MAGIC_TYPE_STRING, 3000, 0, 3000, 0);
         Skill DomainOfTheDemonGod("Domain Of The Demon God", MAGIC_TYPE_STRING, 10000, 0, 3000, 0);
+        Skill fireGod("fireGod", MAGIC_TYPE_STRING, 33000, 0, 3000, 0);
         // dogo skills
         // Skill bite("Bite", PHYSICAL_TYPE_STRING, 35, 0, 0, 0);
         // Skill howl("Howl", PHYSICAL_TYPE_STRING, 0, 0, 100, 0);
@@ -810,6 +824,12 @@ int battle(Player *me, Enemy *them)
             me->setHp(HP_LVL8 + 1000);
             me->addSkill(DomainOfTheDemonGod);
         }
+        if (xp_temp_buffer > 10000 && me->getLvl() < 10 && me->getSkill((me->getSkillCount())).getName() != "fireGod")
+        {
+            me->setLvl(10);
+            me->setHp(HP_LVL8 + 10000);
+            me->addSkill(fireGod);
+        }
 
         return 1;
     }
@@ -864,6 +884,15 @@ int quickSave(Player *me)
 }
 int quickLoad(Player *me)
 {
+
+    Skill fireBall("Fire Ball", MAGIC_TYPE_STRING, 100, 300, 20, 0);
+    Skill swordSlach("Sword Slash", PHYSICAL_TYPE_STRING, 400, 10, 60, 0);
+    Skill hellFire("Hell Fire", MAGIC_TYPE_STRING, 900, 0, 200, 0);
+    Skill TerrorRain("Terror rain", MAGIC_TYPE_STRING, 1000, 0, 3000, 0);
+    Skill hellDomain("Hell domain", MAGIC_TYPE_STRING, 3000, 0, 3000, 0);
+    Skill DomainOfTheDemonGod("Domain Of The Demon God", MAGIC_TYPE_STRING, 10000, 0, 3000, 0);
+    Skill fireGod("fireGod", MAGIC_TYPE_STRING, 33000, 0, 3000, 0);
+
     cout << "quickLoad" << endl;
 
     string text;
@@ -894,5 +923,87 @@ int quickLoad(Player *me)
     me->setSkillCount(str_to_int(text));
 
     readFile.close();
+    // wchar_t *fileLPCWSTR = L".Save.txt"; // To avoid incompatibility
+    //                                      // in GetFileAttributes()
+    // int attr = GetFileAttributes(fileLPCWSTR);
+    // if ((attr & FILE_ATTRIBUTE_HIDDEN) == 0)
+    // {
+    //     SetFileAttributes(fileLPCWSTR, attr | FILE_ATTRIBUTE_HIDDEN);
+    // }
+    switch (me->getLvl())
+    {
+    case 10:
+
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        me->addSkill(TerrorRain);
+        me->addSkill(hellDomain);
+        me->addSkill(DomainOfTheDemonGod);
+        me->addSkill(fireGod);
+
+        break;
+    case 9:
+
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        me->addSkill(TerrorRain);
+        me->addSkill(hellDomain);
+        me->addSkill(DomainOfTheDemonGod);
+
+        break;
+    case 8:
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        me->addSkill(TerrorRain);
+        me->addSkill(hellDomain);
+
+        break;
+    case 7:
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        me->addSkill(TerrorRain);
+        me->addSkill(hellDomain);
+        break;
+    case 6:
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        me->addSkill(TerrorRain);
+        break;
+    case 5:
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        break;
+    case 4:
+        me->addSkill(swordSlach);
+        me->addSkill(fireBall);
+
+        me->addSkill(hellFire);
+        break;
+    case 3:
+        me->addSkill(fireBall);
+        me->addSkill(swordSlach);
+        break;
+    case 2:
+        me->addSkill(fireBall);
+        me->addSkill(swordSlach);
+        break;
+    case 1:
+        me->addSkill(swordSlach);
+        break;
+    default:
+        break;
+    }
     return 1;
 }
