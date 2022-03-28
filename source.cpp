@@ -4,6 +4,7 @@
 #include <windows.h>
 #include <ctime>
 #include <cstdlib>
+#include <fstream>
 
 using namespace std;
 #define HP_LVL0 100
@@ -179,6 +180,10 @@ public:
     {
         return skillCnt;
     }
+    void setSkillCount(int skillCntt)
+    {
+        skillCnt = skillCntt;
+    }
 };
 class Enemy : public LivingObject
 {
@@ -216,6 +221,7 @@ int print();
 int level1(Player *);
 int level2(Player *);
 int level3(Player *);
+int level4(Player *);
 void helpPrint();
 int str_to_int(const string &str);
 int printPlayerStats(Player *);
@@ -224,6 +230,9 @@ int printPlayerStats(Player *, Enemy *);
 int battle(Player *me, Enemy *them);
 void fancyPrint(string s);
 void printPlayerSkills(Player *me);
+
+int quickSave(Player *);
+int quickLoad(Player *);
 int main() //###################################################################################################################################################################
 {
     int lvlCleared = 0;
@@ -272,8 +281,17 @@ int main() //###################################################################
         case 3:
             lvlCleared = level3(&me);
             break;
+        case 4:
+            lvlCleared = level4(&me);
+            break;
         case 101:
             helpPrint();
+            break;
+        case 102:
+            quickSave(&me);
+            break;
+        case 103:
+            quickLoad(&me);
             break;
         case 0:
             return 0;
@@ -282,7 +300,7 @@ int main() //###################################################################
         {
             fancyPrint("lvl cleared");
         }
-        else
+        else if (!lvlCleared)
         {
             cout << "lvl failed" << endl;
         }
@@ -490,8 +508,49 @@ int level3(Player *me)
 
     if (battle(me, &them) == 0)
     {
-        return 0;
         fancyPrint("what have you expected little worm!!!");
+        return 0;
+    }
+}
+int level4(Player *me)
+{
+    int battleflag = 0;
+    // dogo skills
+    Skill dragonBreath("dragonBreath", PHYSICAL_TYPE_STRING, 750, 0, 200, 0);
+
+    int flag = 0;
+    string playerInput;
+
+    cout << "this is level 3" << endl;
+    SLEEP_FOR_1000MS;
+
+    printPlayerStats(me);
+    SLEEP_FOR_1000MS;
+
+    Enemy them;
+
+    SLEEP_FOR_1000MS;
+    printPlayerStats(me, &them);
+    cout << "you travel far away from ILRIS's den but his followers are hunting you down" << endl;
+    SLEEP_FOR_1000MS;
+    cout << "attempting to flee is futile " << endl;
+    SLEEP_FOR_1000MS;
+    cout << "you must stand your grounde " << endl;
+    SLEEP_FOR_1000MS;
+    for (int i = 0; i < 10; i++)
+    {
+        them.setName("Fire Dragon ILIRS follower");
+        them.addSkill(dragonBreath);
+        them.setHp(4000);
+        them.setExp(4000);
+        if (battle(me, &them) == 0)
+        {
+            return 0;
+        }
+        else
+        {
+            return 1;
+        }
     }
 }
 void helpPrint()
@@ -527,15 +586,21 @@ void helpPrint()
 int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
 {
     CLR_SCREEN;
+    cout << "*********************" << endl;
     cout << "za level 1 birajte 1 " << endl;
     cout << "za level 2 birajte 2 " << endl;
     cout << "za level 3 birajte 3 " << endl;
+    cout << "za level 4 birajte 4 " << endl;
+    cout << "---------------------" << endl;
     // cout << "za level 4 birajte 4 " << endl;
     // cout << "za level 5 birajte 5 " << endl;
     // cout << "za level 6 birajte 6 " << endl;
     // cout << "za level 7 birajte 7 " << endl;
     // cout << "za level 8 birajte 8 " << endl;
     cout << "za HELP birajte 101 " << endl;
+    cout << "za Q. SAVE birajte 102 " << endl;
+    cout << "za Q. LOAD birajte 103 " << endl;
+    cout << "*********************" << endl;
     cout << "ako je neka rijec ili 0 biti ce zavrsena igra " << endl;
 }
 int printPlayerStats(Player *me)
@@ -745,6 +810,7 @@ int battle(Player *me, Enemy *them)
             me->setHp(HP_LVL8 + 1000);
             me->addSkill(DomainOfTheDemonGod);
         }
+
         return 1;
     }
     else
@@ -779,4 +845,54 @@ int random_num(int max)
 {
     srand(time(0));
     return rand() % max;
+}
+
+int quickSave(Player *me)
+{
+    cout << "quickSave" << endl;
+    fstream writeFile;
+    writeFile.open(".Save.txt", ios::out);
+
+    writeFile << me->getName() << endl;
+    writeFile << me->getHp() << endl;
+    writeFile << me->getMp() << endl;
+    writeFile << me->getLvl() << endl;
+    writeFile << me->getExp() << endl;
+    writeFile << me->getSkillCount() << endl;
+
+    writeFile.close();
+}
+int quickLoad(Player *me)
+{
+    cout << "quickLoad" << endl;
+
+    string text;
+
+    fstream readFile;
+
+    readFile.open(".Save.txt", ios::in);
+    if (readFile)
+    {
+        cout << "file exists" << endl;
+    }
+    else
+    {
+        cout << "no such file " << endl;
+        return 0;
+    }
+    getline(readFile, text);
+    me->setName(text);
+    getline(readFile, text);
+    me->setHp(str_to_int(text));
+    getline(readFile, text);
+    me->setMp(str_to_int(text));
+    getline(readFile, text);
+    me->setLvl(str_to_int(text));
+    getline(readFile, text);
+    me->setExp(str_to_int(text));
+    getline(readFile, text);
+    me->setSkillCount(str_to_int(text));
+
+    readFile.close();
+    return 1;
 }
