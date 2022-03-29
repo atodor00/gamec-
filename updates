@@ -1,24 +1,23 @@
 solved::
     structure the code in multiple files
     money in Trojs [money]
-    
+    store --buy armor (ap increse)  MUST   
+    bar --drink hp (hp increse)  MUST     SLEEPING 
+         town 
 not solved::
 
-    armor
-
+    
     strain ----> add to skills as an atribute
     if 3 lvl abouve skill strain not effective
 
 
-    town 
-        .............................................................
-        .store --buy armor (ap increse)  MUST                        .
-        .                                                            .
-        .bar --drink hp (hp increse)  MUST                           .
+
+      
+        .                     .
         .if you drink more than 200 potions you get drunk fist skill .
-        .                                                            .
-        .home --sleep (wait for 5 min for ap and hp increse)         .
-        ..............................................................
+
 
     level5 --- goblin vilage
     save file to c disc program files
+    check for integrity of data from load
+    if integrity not good remove file and exit the game

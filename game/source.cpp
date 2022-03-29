@@ -6,6 +6,7 @@ using namespace std;
 #include "./classes/classSkill.cpp"
 #include "./classes/classPlayer.cpp"
 #include "./classes/classEnemy.cpp"
+#include "./classes/IncrprDecript/encdec.cpp"
 #include "functionDeclarations.cpp"
 
 int main() //###################################################################################################################################################################

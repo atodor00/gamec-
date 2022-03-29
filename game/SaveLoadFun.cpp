@@ -17,11 +17,32 @@ int quickSave(Player *me)
     writeFile << me->getSkillCount() << endl;
 
     writeFile.close();
+
+    encdec enc(".Save.txt", 123423);
+    char c;
+
+    cout << "encrypting..... \n";
+
+    cin.ignore();
+    enc.encrypt();
+    if (remove(".Save.txt") != 0)
+        perror("Error deleting file");
+    else
+        puts("File successfully deleted");
 }
+
 int quickLoad(Player *me)
 {
 
     cout << "quickLoad" << endl;
+
+    encdec dec("temp.save.f", 123423);
+
+    cout << "decrypting..... \n";
+
+    cin.ignore();
+
+    dec.decrypt();
 
     string text;
 
@@ -59,6 +80,9 @@ int quickLoad(Player *me)
     bestowSkillAcordingToLevel(me);
 
     readFile.close();
-
+    if (remove(".Save.txt") != 0)
+        perror("Error deleting file");
+    else
+        puts("File successfully deleted");
     return 1;
 }

@@ -7,3 +7,6 @@
 #include <ctime>
 #include <cstdlib>
 #include <fstream>
+
+#include <fstream>
+#include <bits/stdc++.h>

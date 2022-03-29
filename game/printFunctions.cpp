@@ -122,22 +122,26 @@ void townPrintOfPaths()
 
 void fancyPrint(string s)
 {
-    int l = 20;
+    int l = s.length();
 
     CLR_SCREEN
-
-    for (int i = 0; i < l; i++)
+    cout << endl
+         << "  ";
+    for (int i = 0; i < l + 3; i++)
     {
         cout << "*";
     }
-    cout << endl;
+    cout << endl
+         << "  ";
 
-    cout << s << endl;
-    for (int i = 0; i < l; i++)
+    cout << "*" << s << " *" << endl
+         << "  ";
+    for (int i = 0; i < l + 3; i++)
     {
         cout << "*";
     }
-    cout << endl;
+    cout << endl
+         << endl;
     SLEEP_FOR_1000MS;
     PRESS_ANY_KEY;
 }
