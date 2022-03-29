@@ -8,7 +8,7 @@ void helpPrint()
     cout << "+++ by solving stages you get experience            +++" << endl;
     cout << "+++ experience is gained from killing               +++" << endl;
     cout << "+++  enemy/monsters                                 +++" << endl;
-    cout << "+++ currently there is no save/load                 +++" << endl;
+
     cout << "+++                                                 +++" << endl;
     cout << "+++ dragon is the hardest boss after you beat him   +++" << endl;
     cout << "+++ you are victorious in this game                 +++" << endl;
@@ -114,10 +114,10 @@ void townPrintOfPaths()
 {
     CLR_SCREEN;
     cout << "*********************" << endl;
-    cout << "1 for Armor Shop     " << endl;
-    cout << "2 for Health Shop " << endl;
+    cout << BLU << "1 for Armor Shop     " << NC << endl;
+    cout << RED << "2 for Health Shop " << NC << endl;
     cout << "*********************" << endl;
-    cout << "ako je neka rijec ili 0 biti ce zavrsena igra " << endl;
+    cout << "ako je neka rijec ili 0 biti ce zavrsen posjet gradu" << endl;
 }
 
 void fancyPrint(string s)

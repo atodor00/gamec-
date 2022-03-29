@@ -12,6 +12,7 @@ using namespace std;
 int main() //###################################################################################################################################################################
 {
     int lvlCleared = 0;
+    int NotALevel = 0;
     int gameEndedFlag = 1;
     string playerInput;
 
@@ -62,20 +63,29 @@ int main() //###################################################################
             break;
         case 100:
             town(&me);
+            NotALevel = 1;
             break;
         case 101:
             helpPrint();
+            NotALevel = 1;
             break;
         case 102:
             quickSave(&me);
+            NotALevel = 1;
             break;
         case 103:
             quickLoad(&me);
+            NotALevel = 1;
             break;
         case 0:
             return 0;
         }
-        if (lvlCleared)
+        if (NotALevel)
+        {
+            // ništa ne radi ako nije level za sad
+            NotALevel = 0;
+        }
+        else if (lvlCleared)
         {
             fancyPrint("lvl cleared");
         }
@@ -83,7 +93,9 @@ int main() //###################################################################
         {
             cout << "lvl failed" << endl;
         }
-        cout << "enter if you want to continue 1 or 0 for exit from game\t";
+        cout << endl
+             << "enter if you want to continue 1 or 0 for exit from game" << endl
+             << "\t";
         if (me.getHp() < HP_LVL0)
         {
             me.setHp(HP_LVL0);

@@ -1,7 +1,7 @@
 
 int armorStore(Player *me)
 {
-
+    cout << BLU;
     string playerInput;
     int armorStoreEndedFlag = 1;
     cout << "welcome to the armor store what do you wish to have" << endl;
@@ -67,16 +67,19 @@ int armorStore(Player *me)
             }
             else
             {
-                cout << "you don't got enough money" << endl;
+                cout << "you don't have enough money" << endl;
             }
 
             break;
         case 0:
         default:
             armorStoreEndedFlag = 0;
+            cout << NC;
             return 0;
         }
 
         cout << endl;
     }
+    cout << NC;
+    return 0;
 }

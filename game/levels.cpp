@@ -2,6 +2,7 @@
 int level1(Player *me)
 {
 
+    CLR_SCREEN
     // dogo skills
     Skill bite("Bite", PHYSICAL_TYPE_STRING, 35, 0, 0, 0);
     Skill howl("Howl", PHYSICAL_TYPE_STRING, 0, 0, 100, 0);
@@ -9,12 +10,15 @@ int level1(Player *me)
     string playerInput;
 
     cout << endl
-         << " this is a tutorial " << endl;
+         << GRN << " this is a tutorial " << NC << endl;
     SLEEP_FOR_1000MS;
-
+    cout << endl
+         << " this is you and your stats and skills " << endl;
+    SLEEP_FOR_1000MS;
     printPlayerStats(me);
     SLEEP_FOR_1000MS;
-
+    PRESS_ANY_KEY;
+    CLR_SCREEN
     Enemy them;
     them.setName("angry doggo");
     them.addSkill(bite);
@@ -24,7 +28,7 @@ int level1(Player *me)
     them.setMoney(200);
     SLEEP_FOR_1000MS;
     printPlayerStats(me, &them);
-
+    SLEEP_FOR_2000MS;
     cout << "stats are going to be displayed like this" << endl;
     SLEEP_FOR_1000MS;
     cout << "you will need to input what action you want to do ...mostly in numbers" << endl;
@@ -75,11 +79,10 @@ int level2(Player *me)
     Skill howl("Howl", PHYSICAL_TYPE_STRING, 0, 0, 100, 0);
     int flag = 0;
     string playerInput;
-
+    CLR_SCREEN
     cout << "this is level 2" << endl;
     SLEEP_FOR_1000MS;
 
-    printPlayerStats(me);
     SLEEP_FOR_1000MS;
 
     Enemy them;
@@ -91,15 +94,9 @@ int level2(Player *me)
     SLEEP_FOR_1000MS;
     printPlayerStats(me, &them);
 
-    cout << "stats are going to be displayed like this" << endl;
-    SLEEP_FOR_1000MS;
-    cout << "you will need to input what action you want to do ...mostly in numbers" << endl;
-    SLEEP_FOR_1000MS;
-    cout << "you are either in story part or you are in a battle part " << endl;
     SLEEP_FOR_1000MS;
     cout << "try to make best decisions" << endl;
     SLEEP_FOR_1000MS;
-    PRESS_ANY_KEY;
 
     cout << "you enter the dungion there is a demonic dog nearby" << endl;
     SLEEP_FOR_1000MS;
@@ -117,13 +114,15 @@ int level2(Player *me)
         return 0;
     }
     cout << "you stroll around but there is a pack of demonic dogs nearby" << endl;
+    PRESS_ANY_KEY;
     SLEEP_FOR_1000MS;
     for (int i = 0; i < 4; i++)
     {
         them.addSkill(bite);
         them.addSkill(howl);
         them.setHp(150);
-        them.setExp(100);
+        them.setExp(200);
+        them.setMoney(50);
         if (battle(me, &them) == 0)
         {
             return 0;
@@ -145,6 +144,7 @@ int level2(Player *me)
     them.setMoney(1000);
     cout << "you are in front of boss monster.... " << endl;
     SLEEP_FOR_1000MS;
+    PRESS_ANY_KEY;
 
     if (battle(me, &them) == 0)
     {
@@ -159,6 +159,7 @@ int level2(Player *me)
 }
 int level3(Player *me)
 {
+    cout << RED;
     int battleflag = 0;
     // dogo skills
     Skill dragonBreath("dragonBreath", PHYSICAL_TYPE_STRING, 1000, 0, 200, 0);
@@ -170,8 +171,27 @@ int level3(Player *me)
     SLEEP_FOR_1000MS;
 
     printPlayerStats(me);
+    SLEEP_FOR_2000MS;
+    cout << "you are walking around beautiful mountains.... " << endl;
+    SLEEP_FOR_2000MS;
+    cout << "you feel free from wordly problems.... " << endl;
+    SLEEP_FOR_2000MS;
+    cout << "but sudenly... " << endl;
+    CLR_SCREEN
+    SLEEP_FOR_2000MS;
+    cout << "but sudenly earth shakes...  " << endl;
+    SLEEP_FOR_2000MS;
+    cout << "is it a vulcano " << endl;
     SLEEP_FOR_1000MS;
-
+    CLR_SCREEN
+    cout << "....no" << endl;
+    SLEEP_FOR_1000MS;
+    cout << "....this is a growl of a monster ...of a dragon" << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "..." << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
     Enemy them;
     them.setName("Fire Dragon ILIRS");
     them.addSkill(dragonBreath);
@@ -189,9 +209,11 @@ int level3(Player *me)
         fancyPrint("what have you expected little worm!!!");
         return 0;
     }
+    cout << NC;
 }
 int level4(Player *me)
 {
+    cout << RED;
     int battleflag = 0;
     // dogo skills
     Skill dragonBreath("dragonBreath", PHYSICAL_TYPE_STRING, 750, 0, 200, 0);
@@ -223,9 +245,11 @@ int level4(Player *me)
         them.setExp(4000);
         if (battle(me, &them) == 0)
         {
+            cout << NC;
             return 0;
         }
     }
+    cout << NC;
     return 1;
 }
 
@@ -240,7 +264,7 @@ int town(Player *me)
 
     cout << "welcome to the town" << endl;
     SLEEP_FOR_1000MS;
-    cout << "you are in GORGON TOWN" << endl;
+    cout << "you are in " << GRN << "GORGON TOWN" << NC << endl;
     SLEEP_FOR_2000MS;
     cout << "see if you want to go anywhere" << endl;
     cout << "for example..... " << endl;
