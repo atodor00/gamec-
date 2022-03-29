@@ -23,7 +23,7 @@ int main() //###################################################################
     //           int terror_effect,
     //           int seduction_effect)
     //     {
-    Skill kick("Kick", PHYSICAL_TYPE_STRING, 50, 0, 0, 0);
+
     // Skill fireBall("Fire Ball", MAGIC_TYPE_STRING, 100, 300, 20, 0);
     // Skill swordSlach("Sword Slash", PHYSICAL_TYPE_STRING, 400, 10, 60, 0);
     // Skill hellFire("Hell Fire", MAGIC_TYPE_STRING, 50, 3000, 200, 0);
@@ -32,7 +32,7 @@ int main() //###################################################################
     // Skill bite("Bite", PHYSICAL_TYPE_STRING, 35, 0, 0, 0);
     // Skill howl("Howl", PHYSICAL_TYPE_STRING, 0, 0, 100, 0);
 
-    me.addSkill(kick);
+    bestowSkillAcordingToLevel(&me);
     me.setHp(200);
     me.setExp(0);
     me.setMoney(me.getMoney() + 100);
@@ -59,6 +59,9 @@ int main() //###################################################################
         case 4:
             lvlCleared = level4(&me);
             break;
+        case 100:
+            town(&me);
+            break;
         case 101:
             helpPrint();
             break;
@@ -79,7 +82,7 @@ int main() //###################################################################
         {
             cout << "lvl failed" << endl;
         }
-        cout << "enter if you want to continue 1 or 0 for exit\t";
+        cout << "enter if you want to continue 1 or 0 for exit from game\t";
         if (me.getHp() < HP_LVL0)
         {
             me.setHp(HP_LVL0);
@@ -96,4 +99,6 @@ int main() //###################################################################
 #include "battleFunction.cpp"
 #include "SaveLoadFun.cpp"
 #include "bestowSkillAcordingToLevel.cpp"
+#include "./townStores/armorStore.cpp"
+#include "./townStores/healthStore.cpp"
 #include "helperFunctions.cpp"

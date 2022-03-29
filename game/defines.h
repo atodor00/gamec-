@@ -30,6 +30,6 @@
 
 #define CLR_SCREEN system("cls");
 
-#define SLEEP_FOR_2000MS Sleep(1)
-#define SLEEP_FOR_1000MS Sleep(1)
+#define SLEEP_FOR_2000MS Sleep(2200)
+#define SLEEP_FOR_1000MS Sleep(1200)
 #define PRESS_ANY_KEY system("pause")

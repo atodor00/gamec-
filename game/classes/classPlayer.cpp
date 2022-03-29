@@ -16,6 +16,10 @@ public:
     {
         Skills[skillCnt++] = Skilll;
     }
+    void removeSkills()
+    {
+        skillCnt = 0;
+    }
     Skill getSkill(int numberOfSkill)
     {
 

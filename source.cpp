@@ -537,7 +537,7 @@ int level4(Player *me)
     int flag = 0;
     string playerInput;
 
-    cout << "this is level 3" << endl;
+    cout << "this is level 4" << endl;
     SLEEP_FOR_1000MS;
 
     printPlayerStats(me);

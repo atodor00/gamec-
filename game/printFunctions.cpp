@@ -43,6 +43,7 @@ int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
     // cout << "za level 6 birajte 6 " << endl;
     // cout << "za level 7 birajte 7 " << endl;
     // cout << "za level 8 birajte 8 " << endl;
+    cout << "za TOWN birajte 100 " << endl;
     cout << "za HELP birajte 101 " << endl;
     cout << "za Q. SAVE birajte 102 " << endl;
     cout << "za Q. LOAD birajte 103 " << endl;
@@ -108,6 +109,17 @@ void printPlayerSkills(Player *me)
         cout << i + 1 << " " << me->getSkill(i).getName() << " dmg: " << me->getSkill(i).getphysical_damage() << endl;
     }
 }
+
+void townPrintOfPaths()
+{
+    CLR_SCREEN;
+    cout << "*********************" << endl;
+    cout << "1 for Armor Shop     " << endl;
+    cout << "2 for Health Shop " << endl;
+    cout << "*********************" << endl;
+    cout << "ako je neka rijec ili 0 biti ce zavrsena igra " << endl;
+}
+
 void fancyPrint(string s)
 {
     int l = 20;

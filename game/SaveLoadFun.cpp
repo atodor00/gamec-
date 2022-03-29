@@ -7,6 +7,10 @@ int quickSave(Player *me)
 
     writeFile << me->getName() << endl;
     writeFile << me->getHp() << endl;
+
+    writeFile << me->getMoney() << endl;
+    writeFile << me->getAp() << endl;
+
     writeFile << me->getMp() << endl;
     writeFile << me->getLvl() << endl;
     writeFile << me->getExp() << endl;
@@ -37,6 +41,12 @@ int quickLoad(Player *me)
     me->setName(text);
     getline(readFile, text);
     me->setHp(str_to_int(text));
+
+    getline(readFile, text);
+    me->setMoney(str_to_int(text));
+    getline(readFile, text);
+    me->setAp(str_to_int(text));
+
     getline(readFile, text);
     me->setMp(str_to_int(text));
     getline(readFile, text);
@@ -45,7 +55,9 @@ int quickLoad(Player *me)
     me->setExp(str_to_int(text));
     getline(readFile, text);
     me->setSkillCount(str_to_int(text));
+    me->removeSkills();
     bestowSkillAcordingToLevel(me);
+
     readFile.close();
 
     return 1;

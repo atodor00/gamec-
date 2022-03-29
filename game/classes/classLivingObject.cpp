@@ -65,9 +65,11 @@ public:
 
     LivingObject()
     {
+        money = 0;
         xp = 0;
         hp = 0;
         mp = 0;
+        ap = 0;
         lvl = 0;
         fear_lvl = 0;
         seduced_lvl = 0;
