@@ -12,6 +12,7 @@ int healthStore(Player *me);
 
 void helpPrint();
 int str_to_int(const string &str);
+int notPositiveAllowed(int);
 int printPlayerStats(Player *);
 
 int printPlayerStats(Player *, Enemy *);

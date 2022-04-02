@@ -53,7 +53,7 @@ int battle(Player *me, Enemy *them)
 
             SLEEP_FOR_1000MS;
 
-            them->setHp((them->getHp() - mySkills[c - 1].getphysical_damage()) + them->getAp() % mySkills[c - 1].getphysical_damage());
+            them->setHp(them->getHp() - notPositiveAllowed((mySkills[c - 1].getphysical_damage()) + them->getAp() % mySkills[c - 1].getphysical_damage()));
 
             break;
         case 0:
@@ -74,7 +74,8 @@ int battle(Player *me, Enemy *them)
             // me->setHp(me->getHp() - themSkills[temp].getphysical_damage());
             int temp = me->getHp() - themSkills[c - 1].getphysical_damage() + me->getAp() % themSkills[c - 1].getphysical_damage();
 
-            me->setHp(me->getHp() - themSkills[c - 1].getphysical_damage() + me->getAp() % themSkills[c - 1].getphysical_damage());
+            me->setHp(me->getHp() - notPositiveAllowed(themSkills[c - 1].getphysical_damage() + me->getAp()));
+
             SLEEP_FOR_1000MS;
             printPlayerStats(me, them);
         }
@@ -103,28 +104,33 @@ int battle(Player *me, Enemy *them)
             me->setLvl(1);
             me->setHp(HP_LVL1);
             me->addSkill(swordSlach);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 201 && me->getLvl() < 2 && me->getSkill((me->getSkillCount())).getName() != "Fire Ball")
         {
             me->setLvl(2);
             me->setHp(HP_LVL2);
             me->addSkill(fireBall);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 301 && me->getLvl() < 3)
         {
             me->setLvl(3);
             me->setHp(HP_LVL3);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 401 && me->getLvl() < 4 && me->getSkill((me->getSkillCount())).getName() != "Hell Fire")
         {
             me->setLvl(4);
             me->setHp(HP_LVL4);
             me->addSkill(hellFire);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 601 && me->getLvl() < 5 && me->getSkill((me->getSkillCount())).getName() != "Terror rain")
         {
             me->setLvl(5);
             me->setHp(HP_LVL5);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 801 && me->getLvl() < 6 && me->getSkill((me->getSkillCount())).getName() != "Terror rain")
         {
@@ -132,6 +138,7 @@ int battle(Player *me, Enemy *them)
             me->setLvl(6);
             me->setHp(HP_LVL6);
             me->addSkill(TerrorRain);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 1101 && me->getLvl() < 7 && me->getSkill((me->getSkillCount())).getName() != "Hell domain")
         {
@@ -139,24 +146,28 @@ int battle(Player *me, Enemy *them)
             me->setHp(HP_LVL7);
             me->setName("Demon Lord: " + me->getName());
             me->addSkill(hellDomain);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 3000 && me->getLvl() < 8)
         {
             me->setLvl(8);
             me->setHp(HP_LVL8);
             me->setMp(MP_LVL8);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 8000 && me->getLvl() < 9 && me->getSkill((me->getSkillCount())).getName() != "Domain Of The Demon God")
         {
             me->setLvl(9);
             me->setHp(HP_LVL8 + 1000);
             me->addSkill(DomainOfTheDemonGod);
+            me->setExp(0);
         }
         if (xp_temp_buffer > 10000 && me->getLvl() < 10 && me->getSkill((me->getSkillCount())).getName() != "fireGod")
         {
             me->setLvl(10);
             me->setHp(HP_LVL8 + 10000);
             me->addSkill(fireGod);
+            me->setExp(0);
         }
 
         return 1;
@@ -166,6 +177,17 @@ int battle(Player *me, Enemy *them)
 
         SLEEP_FOR_1000MS;
         deathPrint();
+        return 0;
+    }
+}
+int notPositiveAllowed(int a)
+{
+    if (a < 0)
+    {
+        return a;
+    }
+    else
+    {
         return 0;
     }
 }
