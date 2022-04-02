@@ -12,7 +12,7 @@ public:
     Player()
     {
         skillCnt = 0;
-    }
+        }
     void addSkill(Skill Skilll)
     {
         Skills[skillCnt++] = Skilll;

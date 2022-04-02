@@ -69,6 +69,9 @@ int main() //###################################################################
         case 5:
             lvlCleared = level5(&me);
             break;
+        case 6:
+            lvlCleared = level6(&me);
+            break;
         case 100:
             town(&me);
             NotALevel = 1;

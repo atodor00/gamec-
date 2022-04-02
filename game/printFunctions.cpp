@@ -34,16 +34,23 @@ int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
     CLR_SCREEN;
     cout << BCYN << "*********************" << endl;
     cout << "za level 1 birajte 1 " << endl;
+    cout << YEL << "tutorial             " << BCYN << endl;
+    cout << "*********************" << endl;
     cout << "za level 2 birajte 2 " << endl;
+    cout << "*********************" << endl;
     cout << "za level 3 birajte 3 " << endl;
+    cout << RED << "IRLIS'S terittory    " << BCYN << endl;
+    cout << "*********************" << endl;
     cout << "za level 4 birajte 4 " << endl;
+    cout << RED << "IRLIS'S follower hunt    " << BCYN << endl;
+    cout << "*********************" << endl;
     cout << "za level 5 birajte 5 " << endl;
+    cout << GRN << "goblin cave          " << BCYN << endl;
+    cout << "*********************" << endl;
+    cout << "za level 6 birajte 6 " << endl;
+    cout << "slime forrest        " << endl;
     cout << "---------------------" << NC << endl;
-    // cout << "za level 4 birajte 4 " << endl;
-    // cout << "za level 5 birajte 5 " << endl;
-    // cout << "za level 6 birajte 6 " << endl;
-    // cout << "za level 7 birajte 7 " << endl;
-    // cout << "za level 8 birajte 8 " << endl;
+
     cout << "za TOWN birajte 100 " << endl;
     cout << "za HELP birajte 101 " << endl;
     cout << YEL << "za Q. SAVE birajte 102 " << endl;
@@ -99,6 +106,7 @@ int printPlayerStats(Player *me, Enemy *them)
     cout << " exp " << them->getExp() << endl;
     cout << " money " << them->getMoney() << " Tr [Trojs]" << endl;
     cout << "..................." << endl;
+    return 1;
 }
 void printPlayerSkills(Player *me)
 {

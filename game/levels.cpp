@@ -335,6 +335,112 @@ int level5(Player *me)
     cout << NC;
     return 1;
 }
+int level6(Player *me)
+{
+    CLR_SCREEN
+    cout << CYN;
+    int battleflag = 0;
+    // dogo skills
+    Skill acidAttack("acidAttack", PHYSICAL_TYPE_STRING, 300, 0, 200, 0);
+    Skill slimeEat("slimeEat", PHYSICAL_TYPE_STRING, 1250, 0, 0, 0);
+    Skill predator("predator", PHYSICAL_TYPE_STRING, 1500, 0, 0, 0);
+
+    int flag = 0;
+    string playerInput;
+
+    cout << "this is level 6" << endl;
+
+    Enemy them;
+
+    PRESS_ANY_KEY;
+    cout << "you travel to the north" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "you stumble upon the grand river" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "there are birds singing in the area" << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
+    cout << "you notice the a tree that is dissolved partly" << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "those are slimes..." << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "they eat their enemy whole..." << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
+    cout << "they attack..." << endl;
+    SLEEP_FOR_1000MS;
+    for (int i = 0; i < 3; i++)
+    {
+        them.setName("Slime");
+        them.addSkill(acidAttack);
+        them.setHp(250);
+        them.setExp(400);
+        them.setMoney(12 * i);
+        if (battle(me, &them) == 0)
+        {
+            cout << NC;
+            return 0;
+        }
+    }
+    CLR_SCREEN
+    cout << "those are gold slimes?" << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "i didnt know they come in diffrent colors..." << endl;
+    SLEEP_FOR_2000MS;
+    for (int i = 0; i < 2; i++)
+    {
+        them.setName("Gold Slime");
+        them.addSkill(acidAttack);
+
+        them.setHp(5000);
+        them.setExp(400);
+        them.setMoney(5000);
+        cout << YEL;
+        if (battle(me, &them) == 0)
+        {
+            cout << NC;
+            return 0;
+        }
+        fancyPrint("your aromor [ap stat] has incresed...");
+        me->setAp(me->getAp() * 3 + 120);
+    }
+    CLR_SCREEN
+    cout << "those are red slimes?" << endl;
+    SLEEP_FOR_1000MS;
+    cout << "are they even more dangerous?" << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
+    cout << "if you want true victory fight against red Slimes as well?" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "do you wish to... 1 or 0" << endl;
+
+    cin >> playerInput;
+
+    if (str_to_int(playerInput))
+    {
+        cout << RED;
+        for (int i = 0; i < 2; i++)
+        {
+            them.setName("Red Slime");
+            them.addSkill(predator);
+            them.setHp(30000);
+            them.setExp(400);
+            them.setMoney(100);
+            if (battle(me, &them) == 0)
+            {
+                cout << NC;
+                return 0;
+            }
+            fancyPrint("your aromor [ap stat] has incresed...");
+            me->setAp(me->getAp() * 3 + 120);
+        }
+    }
+    cout << NC;
+    return 1;
+}
 
 int town(Player *me)
 {

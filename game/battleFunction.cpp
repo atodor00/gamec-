@@ -22,7 +22,10 @@ int battle(Player *me, Enemy *them)
         {
             themSkills[i] = them->getSkill(i);
         }
-
+        if (c > me->getSkillCount())
+        {
+            c = 1;
+        }
         switch (c)
         {
         case 1:
@@ -45,7 +48,14 @@ int battle(Player *me, Enemy *them)
         case 18:
         case 19:
         case 20:
-        case 21:
+        case 22:
+        case 23:
+        case 24:
+        case 25:
+        case 26:
+        case 27:
+        case 28:
+        case 29:
             cout << endl
                  << mySkills[c - 1].getphysical_damage();
             cout << endl
@@ -53,7 +63,7 @@ int battle(Player *me, Enemy *them)
 
             SLEEP_FOR_1000MS;
 
-            them->setHp(them->getHp() - notPositiveAllowed((mySkills[c - 1].getphysical_damage()) + them->getAp() % mySkills[c - 1].getphysical_damage()));
+            them->setHp(them->getHp() - notNegativeAllowed((mySkills[c - 1].getphysical_damage()) + them->getAp() % mySkills[c - 1].getphysical_damage()));
 
             break;
         case 0:
@@ -65,16 +75,37 @@ int battle(Player *me, Enemy *them)
 
             SLEEP_FOR_1000MS;
             printPlayerStats(me, them);
-            temp = random_num(1);
+            cout << "skill count is: " << them->getSkillCount();
+            temp = randi(0, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(0, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(1, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(1, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(1, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(1, them->getSkillCount());
+            cout << "temp " << temp << endl;
+            temp = randi(0, them->getSkillCount());
             cout << "temp " << temp << endl;
             cout << endl
                  << themSkills[temp].getphysical_damage();
             cout << endl
                  << themSkills[temp].getName();
             // me->setHp(me->getHp() - themSkills[temp].getphysical_damage());
-            int temp = me->getHp() - themSkills[c - 1].getphysical_damage() + me->getAp() % themSkills[c - 1].getphysical_damage();
+            // int temp = me->getHp() - themSkills[1].getphysical_damage() + me->getAp() % themSkills[1].getphysical_damage();
 
-            me->setHp(me->getHp() - notPositiveAllowed(themSkills[c - 1].getphysical_damage() + me->getAp()));
+            // me->setHp(me->getHp() - notNegativeAllowed(themSkills[1].getphysical_damage() + me->getAp()));
+            if (themSkills[temp].getphysical_damage() - me->getAp() <= 0)
+            {
+                me->setHp(me->getHp());
+            }
+            else
+            {
+                me->setHp(me->getHp() - themSkills[temp].getphysical_damage() + me->getAp());
+            }
 
             SLEEP_FOR_1000MS;
             printPlayerStats(me, them);
@@ -99,41 +130,48 @@ int battle(Player *me, Enemy *them)
         me->setExp(me->getExp() + 100 + (them->getExp() / 5));
 
         int xp_temp_buffer = me->getExp();
+        int flagLvl = 0;
         if (xp_temp_buffer > 100 && me->getLvl() < 1 && me->getSkill((me->getSkillCount())).getName() != "Sword Slash")
         {
+            flagLvl = 1;
             me->setLvl(1);
             me->setHp(HP_LVL1);
             me->addSkill(swordSlach);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 201 && me->getLvl() < 2 && me->getSkill((me->getSkillCount())).getName() != "Fire Ball")
+        if (xp_temp_buffer > 301 && me->getLvl() < 2 && me->getSkill((me->getSkillCount())).getName() != "Fire Ball")
         {
+            flagLvl = 1;
             me->setLvl(2);
             me->setHp(HP_LVL2);
             me->addSkill(fireBall);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 301 && me->getLvl() < 3)
+        if (xp_temp_buffer > 501 && me->getLvl() < 3)
         {
+            flagLvl = 1;
             me->setLvl(3);
             me->setHp(HP_LVL3);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 401 && me->getLvl() < 4 && me->getSkill((me->getSkillCount())).getName() != "Hell Fire")
+        if (xp_temp_buffer > 701 && me->getLvl() < 4 && me->getSkill((me->getSkillCount())).getName() != "Hell Fire")
         {
+            flagLvl = 1;
             me->setLvl(4);
             me->setHp(HP_LVL4);
             me->addSkill(hellFire);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 601 && me->getLvl() < 5 && me->getSkill((me->getSkillCount())).getName() != "Terror rain")
+        if (xp_temp_buffer > 801 && me->getLvl() < 5)
         {
+            flagLvl = 1;
             me->setLvl(5);
             me->setHp(HP_LVL5);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 801 && me->getLvl() < 6 && me->getSkill((me->getSkillCount())).getName() != "Terror rain")
+        if (xp_temp_buffer > 901 && me->getLvl() < 6 && me->getSkill((me->getSkillCount())).getName() != "Terror rain")
         {
+            flagLvl = 1;
 
             me->setLvl(6);
             me->setHp(HP_LVL6);
@@ -142,6 +180,7 @@ int battle(Player *me, Enemy *them)
         }
         if (xp_temp_buffer > 1101 && me->getLvl() < 7 && me->getSkill((me->getSkillCount())).getName() != "Hell domain")
         {
+            flagLvl = 1;
             me->setLvl(7);
             me->setHp(HP_LVL7);
             me->setName("Demon Lord: " + me->getName());
@@ -150,26 +189,36 @@ int battle(Player *me, Enemy *them)
         }
         if (xp_temp_buffer > 3000 && me->getLvl() < 8)
         {
+            flagLvl = 1;
             me->setLvl(8);
             me->setHp(HP_LVL8);
             me->setMp(MP_LVL8);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 8000 && me->getLvl() < 9 && me->getSkill((me->getSkillCount())).getName() != "Domain Of The Demon God")
+        if (xp_temp_buffer > 7000 && me->getLvl() < 9 && me->getSkill((me->getSkillCount())).getName() != "Domain Of The Demon God")
         {
+            flagLvl = 1;
             me->setLvl(9);
             me->setHp(HP_LVL8 + 1000);
             me->addSkill(DomainOfTheDemonGod);
             me->setExp(0);
         }
-        if (xp_temp_buffer > 10000 && me->getLvl() < 10 && me->getSkill((me->getSkillCount())).getName() != "fireGod")
+        if (xp_temp_buffer > 8000 && me->getLvl() < 10 && me->getSkill((me->getSkillCount())).getName() != "fireGod")
         {
+            flagLvl = 1;
             me->setLvl(10);
             me->setHp(HP_LVL8 + 10000);
             me->addSkill(fireGod);
             me->setExp(0);
         }
 
+        if (flagLvl == 1)
+        {
+            fancyPrint("you have leveled up");
+            cout << "current lvl is: " << me->getLvl() << endl;
+            SLEEP_FOR_1000MS;
+            flagLvl = 0;
+        }
         return 1;
     }
     else
@@ -180,9 +229,9 @@ int battle(Player *me, Enemy *them)
         return 0;
     }
 }
-int notPositiveAllowed(int a)
+int notNegativeAllowed(int a)
 {
-    if (a < 0)
+    if (a > 0)
     {
         return a;
     }
