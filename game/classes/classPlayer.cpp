@@ -5,6 +5,7 @@ class Player : public LivingObject
 private:
     int current_level;
     int skillCnt;
+    // int lvlClearedCnt;
     Skill Skills[100];
 
 public:
@@ -33,4 +34,12 @@ public:
     {
         skillCnt = skillCntt;
     }
+    // int getlvlClearedCnt()
+    // {
+    //     return lvlClearedCnt;
+    // }
+    // void setlvlClearedCnt(int lvlClearedCntt)
+    // {
+    //     lvlClearedCnt = lvlClearedCntt;
+    // }
 };

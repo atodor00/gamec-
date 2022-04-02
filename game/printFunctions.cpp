@@ -5,7 +5,7 @@ void helpPrint()
     cout << "++++++++++++++++++++help+++++++++++++++++++++++++++++++" << endl;
     cout << "+++                                                 +++" << endl;
     cout << "+++ use numbers to give input                       +++" << endl;
-    cout << "+++ by solving stages you get experience            +++" << endl;
+    // cout << "+++ by solving stages you get experience            +++" << endl;
     cout << "+++ experience is gained from killing               +++" << endl;
     cout << "+++  enemy/monsters                                 +++" << endl;
 
@@ -32,12 +32,13 @@ void helpPrint()
 int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
 {
     CLR_SCREEN;
-    cout << "*********************" << endl;
+    cout << BCYN << "*********************" << endl;
     cout << "za level 1 birajte 1 " << endl;
     cout << "za level 2 birajte 2 " << endl;
     cout << "za level 3 birajte 3 " << endl;
     cout << "za level 4 birajte 4 " << endl;
-    cout << "---------------------" << endl;
+    cout << "za level 5 birajte 5 " << endl;
+    cout << "---------------------" << NC << endl;
     // cout << "za level 4 birajte 4 " << endl;
     // cout << "za level 5 birajte 5 " << endl;
     // cout << "za level 6 birajte 6 " << endl;
@@ -45,8 +46,8 @@ int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
     // cout << "za level 8 birajte 8 " << endl;
     cout << "za TOWN birajte 100 " << endl;
     cout << "za HELP birajte 101 " << endl;
-    cout << "za Q. SAVE birajte 102 " << endl;
-    cout << "za Q. LOAD birajte 103 " << endl;
+    cout << YEL << "za Q. SAVE birajte 102 " << endl;
+    cout << GRN << "za Q. LOAD birajte 103 " << NC << endl;
     cout << "*********************" << endl;
     cout << "ako je neka rijec ili 0 biti ce zavrsena igra " << endl;
 }
@@ -144,4 +145,65 @@ void fancyPrint(string s)
          << endl;
     SLEEP_FOR_1000MS;
     PRESS_ANY_KEY;
+}
+
+void fancyPrintNoPress(string s)
+{
+    int l = s.length();
+
+    CLR_SCREEN
+    cout << endl
+         << "  ";
+    for (int i = 0; i < l + 3; i++)
+    {
+        cout << "*";
+    }
+    cout << endl
+         << "  ";
+
+    cout << "*" << s << " *" << endl
+         << "  ";
+    for (int i = 0; i < l + 3; i++)
+    {
+        cout << "*";
+    }
+    cout << endl
+         << endl;
+    SLEEP_FOR_2000MS;
+}
+
+void titlePrint()
+{
+    CLR_SCREEN
+    cout << YEL << "**************************************************************************************************************************" << endl;
+    cout << "*      ><       ><<<<<<<    ><<<<<    ><<    ><<<<     ><<<     ><<                                                      *" << endl;
+    cout << "*     >< <<     ><<    ><<  ><<   ><< ><<  ><<    ><<  >< ><<   ><<                                                      *" << endl;
+    cout << "*    ><  ><<    ><<    ><<  ><<    ><<><<><<        ><<><< ><<  ><<                                                      *" << endl;
+    cout << "*   ><<   ><<   >< ><<      ><<    ><<><<><<        ><<><<  ><< ><<                                                      *" << endl;
+    cout << "*  ><<<<<< ><<  ><<  ><<    ><<    ><<><<><<        ><<><<   >< ><<                                                      *" << endl;
+    cout << "* ><<       ><< ><<    ><<  ><<   ><< ><<  ><<     ><< ><<    >< <<                                                      *" << endl;
+    cout << "*><<         ><<><<      ><<><<<<<    ><<    ><<<<     ><<      ><<                                                      *" << endl;
+    cout << "*       ><       ><<<<<    ><<         ><<      ><       ><<<     ><<><<<<<    ><<     ><<><<<<<<<    ><<<<<<<<  ><< <<  *" << endl;
+    cout << "*      >< <<     ><<   ><<  ><<       ><<      >< <<     >< ><<   ><<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
+    cout << "*     ><  ><<    ><<    ><<  ><<     ><<      ><  ><<    ><< ><<  ><<><<    ><<><<     ><<><<    ><<  ><<       ><<      *" << endl;
+    cout << "*    ><<   ><<   ><<    ><<   ><<   ><<      ><<   ><<   ><<  ><< ><<><<    ><<><<     ><<>< ><<      ><<<<<<     ><<    *" << endl;
+    cout << "*   ><<<<<< ><<  ><<    ><<    ><< ><<      ><<<<<< ><<  ><<   >< ><<><<    ><<><<     ><<><<  ><<    ><<            ><< *" << endl;
+    cout << "*  ><<       ><< ><<   ><<      ><<<<      ><<       ><< ><<    >< <<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
+    cout << "* ><<         ><<><<<<<          ><<      ><<         ><<><<      ><<><<<<<      ><<<<<   ><<      ><<><<<<<<<<  ><< <<  *" << endl;
+    cout << "**************************************************************************************************************************" << NC << endl;
+    SLEEP_FOR_2000MS;
+    SLEEP_FOR_2000MS;
+}
+void deathPrint()
+{
+    CLR_SCREEN
+    cout << "****************#*****************" << endl;
+    cout << "**************#####***************" << endl;
+    cout << "****************#*****************" << endl;
+    cout << "****************#*****************" << endl;
+    cout << "*      _         _ ) o  _   _ ) *" << endl;
+    cout << "* (_( (_) (_(   (_(  ( )_) (_(  *" << endl;
+    cout << "*   _)                (_        *" << endl;
+    cout << "*********************************" << endl;
+    SLEEP_FOR_2000MS;
 }

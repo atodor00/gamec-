@@ -12,6 +12,7 @@ int healthStore(Player *me)
         cout << "Cost is 250 [Tr]" << endl;
         cout << "you have " << me->getMoney() << endl;
         cout << "sorry" << endl;
+        cout << NC;
         return 0;
     }
 
@@ -21,6 +22,7 @@ int healthStore(Player *me)
     if (x == 0)
     {
         cout << "byebye mister healthy" << endl;
+        cout << NC;
         return 0;
     }
     cout << "waiting begins" << endl;

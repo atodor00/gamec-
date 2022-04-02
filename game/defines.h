@@ -59,3 +59,5 @@
 #define BMAG "\e[1;35m"
 #define BCYN "\e[1;36m"
 #define BWHT "\e[1;37m"
+
+// #define _WIN32_WINNT 0x500

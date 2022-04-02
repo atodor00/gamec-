@@ -11,12 +11,15 @@ using namespace std;
 
 int main() //###################################################################################################################################################################
 {
+    ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
     int lvlCleared = 0;
     int NotALevel = 0;
     int gameEndedFlag = 1;
     string playerInput;
 
     Player me;
+
+    titlePrint();
 
     //    Skill(string nname,
     //           string ttype,
@@ -61,6 +64,9 @@ int main() //###################################################################
         case 4:
             lvlCleared = level4(&me);
             break;
+        case 5:
+            lvlCleared = level5(&me);
+            break;
         case 100:
             town(&me);
             NotALevel = 1;
@@ -78,6 +84,9 @@ int main() //###################################################################
             NotALevel = 1;
             break;
         case 0:
+
+            fancyPrintNoPress("bye bye :)");
+            titlePrint();
             return 0;
         }
         if (NotALevel)
@@ -103,7 +112,9 @@ int main() //###################################################################
 
         cin >> gameEndedFlag;
     }
-    fancyPrint("bye bye :)");
+
+    fancyPrintNoPress("bye bye :)");
+    titlePrint();
     return 0;
 } //#########################################################################################################################################################################################
 

@@ -145,11 +145,12 @@ int level2(Player *me)
     cout << "you are in front of boss monster.... " << endl;
     SLEEP_FOR_1000MS;
     PRESS_ANY_KEY;
-
+    cout << RED;
     if (battle(me, &them) == 0)
     {
         return 0;
     }
+    cout << NC;
     cout << "you are out.... " << endl;
     SLEEP_FOR_1000MS;
     cout << "you are safe now.... " << endl;
@@ -159,6 +160,7 @@ int level2(Player *me)
 }
 int level3(Player *me)
 {
+    CLR_SCREEN
     cout << RED;
     int battleflag = 0;
     // dogo skills
@@ -207,12 +209,14 @@ int level3(Player *me)
     if (battle(me, &them) == 0)
     {
         fancyPrint("what have you expected little worm!!!");
+        cout << NC;
         return 0;
     }
     cout << NC;
 }
 int level4(Player *me)
 {
+    CLR_SCREEN
     cout << RED;
     int battleflag = 0;
     // dogo skills
@@ -221,7 +225,7 @@ int level4(Player *me)
     int flag = 0;
     string playerInput;
 
-    cout << "this is level 3" << endl;
+    cout << "this is level 4" << endl;
     SLEEP_FOR_1000MS;
 
     printPlayerStats(me);
@@ -231,22 +235,101 @@ int level4(Player *me)
 
     SLEEP_FOR_1000MS;
     printPlayerStats(me, &them);
+    PRESS_ANY_KEY;
     cout << "you travel far away from ILRIS's den but his followers are hunting you down" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "attempting to flee is useless and impossible " << endl;
+    SLEEP_FOR_2000MS;
+    cout << "you must stand your ground " << endl;
     SLEEP_FOR_1000MS;
-    cout << "attempting to flee is futile " << endl;
-    SLEEP_FOR_1000MS;
-    cout << "you must stand your grounde " << endl;
-    SLEEP_FOR_1000MS;
+    cout << "be brave " << endl;
+    SLEEP_FOR_2000MS;
     for (int i = 0; i < 10; i++)
     {
         them.setName("Fire Dragon ILIRS follower");
         them.addSkill(dragonBreath);
-        them.setHp(2000);
+        them.setHp(3000);
         them.setExp(4000);
+        them.setMoney(1000);
         if (battle(me, &them) == 0)
         {
             cout << NC;
             return 0;
+        }
+    }
+    cout << NC;
+    return 1;
+}
+int level5(Player *me)
+{
+    CLR_SCREEN
+    cout << GRN;
+    int battleflag = 0;
+    // dogo skills
+    Skill goblinHighMagic("goblinHighMagic", PHYSICAL_TYPE_STRING, 7500, 0, 200, 0);
+    Skill goblinMagic("goblinMagic", PHYSICAL_TYPE_STRING, 550, 0, 200, 0);
+    int flag = 0;
+    string playerInput;
+
+    cout << "this is level 5" << endl;
+
+    Enemy them;
+
+    PRESS_ANY_KEY;
+    cout << "you travel far into the forest" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "you stumble upon the cave" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "...hmm there are skulls around" << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
+    cout << "you notice the green skin and ugly faces" << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "those are goblins..." << endl;
+    SLEEP_FOR_2000MS;
+    CLR_SCREEN
+    cout << "those are goblins..." << endl;
+    SLEEP_FOR_1000MS;
+    CLR_SCREEN
+    cout << "they attack..." << endl;
+    SLEEP_FOR_1000MS;
+    for (int i = 0; i < 7; i++)
+    {
+        them.setName("Goblin");
+        them.addSkill(goblinMagic);
+        them.setHp(250);
+        them.setExp(400);
+        them.setMoney(12 * i);
+        if (battle(me, &them) == 0)
+        {
+            cout << NC;
+            return 0;
+        }
+    }
+    SLEEP_FOR_2000MS;
+    cout << "if you want true victory fight against Goblin High Priests" << endl;
+    SLEEP_FOR_2000MS;
+    cout << "do you wish to... 1 or 0" << endl;
+
+    cin >> playerInput;
+
+    if (str_to_int(playerInput))
+    {
+        fancyPrint("BRAVE WARRIOR");
+
+        for (int i = 0; i < 2; i++)
+        {
+            them.setName("Goblin High Priest");
+            them.addSkill(goblinHighMagic);
+            them.setHp(11000);
+            them.setExp(4000);
+            them.setMoney(117000);
+            if (battle(me, &them) == 0)
+            {
+                cout << NC;
+                return 0;
+            }
         }
     }
     cout << NC;

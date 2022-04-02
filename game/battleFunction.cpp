@@ -72,7 +72,9 @@ int battle(Player *me, Enemy *them)
             cout << endl
                  << themSkills[temp].getName();
             // me->setHp(me->getHp() - themSkills[temp].getphysical_damage());
-            me->setHp((me->getHp() - themSkills[c - 1].getphysical_damage()) + me->getAp() % themSkills[c - 1].getphysical_damage());
+            int temp = me->getHp() - themSkills[c - 1].getphysical_damage() + me->getAp() % themSkills[c - 1].getphysical_damage();
+
+            me->setHp(me->getHp() - themSkills[c - 1].getphysical_damage() + me->getAp() % themSkills[c - 1].getphysical_damage());
             SLEEP_FOR_1000MS;
             printPlayerStats(me, them);
         }
@@ -162,7 +164,8 @@ int battle(Player *me, Enemy *them)
     else
     {
 
-        fancyPrint("you died");
+        SLEEP_FOR_1000MS;
+        deathPrint();
         return 0;
     }
 }
