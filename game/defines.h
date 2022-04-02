@@ -29,6 +29,15 @@
 #define PHYSICAL_TYPE_STRING "physical"
 
 #define CLR_SCREEN system("cls");
+#define WINDOWS 1
+#ifdef WINDOWS
+#define SET_CONSOLE_TITLE SetConsoleTitle("ARDION Advanturer - the brave one");
+
+#endif
+#ifdef LINUX
+#define SET_CONSOLE_TITLE printf("%c]0;%s%c", '\033', "ARDION Advanturer - the brave one", '\007');
+
+#endif
 
 #define SLEEP_FOR_2000MS Sleep(3000)
 #define SLEEP_FOR_1000MS Sleep(1900)

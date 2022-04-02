@@ -11,7 +11,9 @@ using namespace std;
 
 int main() //###################################################################################################################################################################
 {
+    SET_CONSOLE_TITLE
     ShowWindow(GetConsoleWindow(), SW_MAXIMIZE);
+
     int lvlCleared = 0;
     int NotALevel = 0;
     int gameEndedFlag = 1;
