@@ -22,7 +22,7 @@ int battle(Player *me, Enemy *them)
         {
             themSkills[i] = them->getSkill(i);
         }
-        if (c > me->getSkillCount())
+        if (c > me->getSkillCount() || c < 0)
         {
             c = 1;
         }

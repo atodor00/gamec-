@@ -47,6 +47,8 @@ int main() //###################################################################
 
     while (gameEndedFlag)
     {
+        std::cin.clear();
+        // std::cin.ignore(INT_MAX);
         print();
         printPlayerStats(&me);
 

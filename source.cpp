@@ -572,10 +572,10 @@ void helpPrint()
     cout << "++++++++++++++++++++help+++++++++++++++++++++++++++++++" << endl;
     cout << "+++                                                 +++" << endl;
     cout << "+++ use numbers to give input                       +++" << endl;
-    cout << "+++ by solving stages you get experience            +++" << endl;
+    // cout << "+++ by solving stages you get experience            +++" << endl;
     cout << "+++ experience is gained from killing               +++" << endl;
     cout << "+++  enemy/monsters                                 +++" << endl;
-    cout << "+++ currently there is no save/load                 +++" << endl;
+    cout << "+++                                                 +++" << endl;
     cout << "+++                                                 +++" << endl;
     cout << "+++ dragon is the hardest boss after you beat him   +++" << endl;
     cout << "+++ you are victorious in this game                 +++" << endl;
@@ -634,7 +634,7 @@ int printPlayerStats(Player *me)
         cout << ".......stats......" << endl;
     }
 
-    cout << " stage: " << stage << endl;
+    // cout << " stage: " << stage << endl;
     cout << " mp  " << me->getMp() << endl;
     cout << " hp  " << me->getHp() << endl;
     cout << " lvl " << me->getLvl() << endl;
