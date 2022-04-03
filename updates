@@ -4,20 +4,16 @@ solved::
     store --buy armor (ap increse)  MUST   
     bar --drink hp (hp increse)  MUST     SLEEPING 
          town 
+         lvl 5 lvl 6 added
 not solved::
 
     
-    strain ----> add to skills as an atribute
-    if 3 lvl abouve skill strain not effective
-
-
-
-      
+    strain ----> add to skills as an atribute (for strain use mp)then if you want just rename everything in code mp -> skillStrain
        
-        if you drink more than 200 potions you get drunk fist skill .
+       
+    if you drink more than 200 potions you get drunk fist skill .
 
 
-    level5 --- goblin vilage
     save file to c disc program files
     check for integrity of data from load
     if integrity not good remove file and exit the game

@@ -51,6 +51,7 @@ int print() // svi leveli su moguci ali sa malim stats-ima nisu riješivi
     cout << YEL << "tutorial             " << BCYN << endl;
     cout << "*********************" << endl;
     cout << "za level 2 birajte 2 " << endl;
+    cout << BLU << "angry doggo pack            " << BCYN << endl;
     cout << "*********************" << endl;
     cout << "za level 3 birajte 3 " << endl;
     cout << RED << "IRLIS'S terittory    " << BCYN << endl;

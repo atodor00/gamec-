@@ -76,19 +76,11 @@ int battle(Player *me, Enemy *them)
             SLEEP_FOR_1000MS;
             printPlayerStats(me, them);
             cout << "skill count is: " << them->getSkillCount();
-            temp = randi(0, them->getSkillCount());
+            temp = randi(0, them->getSkillCount()) - 1;
             cout << "temp " << temp << endl;
-            temp = randi(0, them->getSkillCount());
+            temp = randi(0, them->getSkillCount() - 1);
             cout << "temp " << temp << endl;
-            temp = randi(1, them->getSkillCount());
-            cout << "temp " << temp << endl;
-            temp = randi(1, them->getSkillCount());
-            cout << "temp " << temp << endl;
-            temp = randi(1, them->getSkillCount());
-            cout << "temp " << temp << endl;
-            temp = randi(1, them->getSkillCount());
-            cout << "temp " << temp << endl;
-            temp = randi(0, them->getSkillCount());
+            temp = randi(0, them->getSkillCount() - 1);
             cout << "temp " << temp << endl;
             cout << endl
                  << themSkills[temp].getphysical_damage();

@@ -1,6 +1,11 @@
 #pragma once
 int quickSave(Player *me)
 {
+    if (remove("temp.save.f") != 0)
+        perror("Error deleting file");
+    else
+        puts("File successfully deleted");
+
     cout << "quickSave" << endl;
     fstream writeFile;
     writeFile.open(".Save.txt", ios::out);

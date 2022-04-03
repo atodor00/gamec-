@@ -165,6 +165,8 @@ int level3(Player *me)
     int battleflag = 0;
     // dogo skills
     Skill dragonBreath("dragonBreath", PHYSICAL_TYPE_STRING, 1000, 0, 200, 0);
+    Skill dragonClaw("dragonClaw", PHYSICAL_TYPE_STRING, 100, 0, 200, 0);
+    Skill howlOfTheDragon("howlOfTheDragon", PHYSICAL_TYPE_STRING, 700, 0, 200, 0);
 
     int flag = 0;
     string playerInput;
@@ -196,6 +198,9 @@ int level3(Player *me)
     CLR_SCREEN
     Enemy them;
     them.setName("Fire Dragon ILIRS");
+
+    them.addSkill(dragonClaw);
+    them.addSkill(howlOfTheDragon);
     them.addSkill(dragonBreath);
     fancyPrint("HUMANS ARE NOT WELCOME IN MY DOMAIN!!!");
     fancyPrint("go away or die");

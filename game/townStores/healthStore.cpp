@@ -47,5 +47,9 @@ int healthStore(Player *me)
     {
         cout << "you dont need any health" << endl;
     }
+    cout << "\tyour current hp is: [" << me->getHp() << "]" << endl
+         << endl;
+    SLEEP_FOR_1000MS;
+
     cout << NC;
 }
