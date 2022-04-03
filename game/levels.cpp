@@ -122,7 +122,7 @@ int level2(Player *me)
         them.addSkill(howl);
         them.setHp(150);
         them.setExp(200);
-        them.setMoney(50);
+        them.setMoney(150);
         if (battle(me, &them) == 0)
         {
             return 0;
@@ -141,7 +141,7 @@ int level2(Player *me)
     them.addSkill(howl);
     them.setHp(1200);
     them.setExp(1000);
-    them.setMoney(1000);
+    them.setMoney(1200);
     cout << "you are in front of boss monster.... " << endl;
     SLEEP_FOR_1000MS;
     PRESS_ANY_KEY;
