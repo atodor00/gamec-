@@ -2,28 +2,42 @@
 void helpPrint()
 {
     CLR_SCREEN;
-    cout << "++++++++++++++++++++help+++++++++++++++++++++++++++++++" << endl;
-    cout << "+++                                                 +++" << endl;
-    cout << "+++ use numbers to give input                       +++" << endl;
-    // cout << "+++ by solving stages you get experience            +++" << endl;
-    cout << "+++ experience is gained from killing               +++" << endl;
-    cout << "+++  enemy/monsters                                 +++" << endl;
+    cout << "\t+++++++++++++++++++++++++++help++++++++++++++++++++++++++++++" << endl;
+    cout << "\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << "\t++++ hello welcome to the game if you are here that means +++" << endl;
+    cout << "\t++++ something went wrong the way you need to play this  ++++" << endl;
+    cout
+        << "\t+++++ game is like so:                                  +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   use numbers for choices                         +++++" << endl;
+    cout << "\t+++++   you activate a skill depending on a number      +++++" << endl;
+    cout << "\t+++++   try not to enter anything weird as game isn't   +++++" << endl;
+    cout << "\t+++++   robust                                          +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   try to have fun                                 +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   I recommend using town option for healing and   +++++" << endl;
+    cout << "\t+++++   I getting armor as it can help you a lot...     +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   some levels are difficult so you need to level up++++" << endl;
+    cout << "\t+++++   as much as you can before                       +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   the game has some bug where it just turns of    +++++" << endl;
+    cout << "\t+++++   try save as much as possible                    +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   currently there is one save                     +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++   you can copy paste saves from temp.save file    +++++" << endl;
+    cout << "\t+++++   somewhere safe and when you want to load        +++++" << endl;
+    cout << "\t+++++   paste to temp.save file like that you can have  +++++" << endl;
+    cout << "\t+++++   multiple saves                                  +++++" << endl;
+    cout << "\t+++++                                                   +++++" << endl;
+    cout << "\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
+         << endl;
 
-    cout << "+++                                                 +++" << endl;
-    cout << "+++ dragon is the hardest boss after you beat him   +++" << endl;
-    cout << "+++ you are victorious in this game                 +++" << endl;
-    cout << "+++                                                 +++" << endl;
-    cout << "+++ if you hit wrong skill number it will be as if  +++" << endl;
-    cout << "+++ you missed                                      +++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
-    cout << "+++   developed by AT   email:atodor00@fesb.hr      +++" << endl;
-    cout << "+++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
+    cout << "\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl;
+    cout << "\t++++++   developed by AT   email:atodor00@fesb.hr      ++++++" << endl;
+    cout << "\t+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++" << endl
          << endl
          << endl
          << endl;
@@ -183,35 +197,50 @@ void fancyPrintNoPress(string s)
 void titlePrint()
 {
     CLR_SCREEN
-    cout << YEL << "**************************************************************************************************************************" << endl;
-    cout << "*      ><       ><<<<<<<    ><<<<<    ><<    ><<<<     ><<<     ><<                                                      *" << endl;
-    cout << "*     >< <<     ><<    ><<  ><<   ><< ><<  ><<    ><<  >< ><<   ><<                                                      *" << endl;
-    cout << "*    ><  ><<    ><<    ><<  ><<    ><<><<><<        ><<><< ><<  ><<                                                      *" << endl;
-    cout << "*   ><<   ><<   >< ><<      ><<    ><<><<><<        ><<><<  ><< ><<                                                      *" << endl;
-    cout << "*  ><<<<<< ><<  ><<  ><<    ><<    ><<><<><<        ><<><<   >< ><<                                                      *" << endl;
-    cout << "* ><<       ><< ><<    ><<  ><<   ><< ><<  ><<     ><< ><<    >< <<                                                      *" << endl;
-    cout << "*><<         ><<><<      ><<><<<<<    ><<    ><<<<     ><<      ><<                                                      *" << endl;
-    cout << "*       ><       ><<<<<    ><<         ><<      ><       ><<<     ><<><<<<<    ><<     ><<><<<<<<<    ><<<<<<<<  ><< <<  *" << endl;
-    cout << "*      >< <<     ><<   ><<  ><<       ><<      >< <<     >< ><<   ><<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
-    cout << "*     ><  ><<    ><<    ><<  ><<     ><<      ><  ><<    ><< ><<  ><<><<    ><<><<     ><<><<    ><<  ><<       ><<      *" << endl;
-    cout << "*    ><<   ><<   ><<    ><<   ><<   ><<      ><<   ><<   ><<  ><< ><<><<    ><<><<     ><<>< ><<      ><<<<<<     ><<    *" << endl;
-    cout << "*   ><<<<<< ><<  ><<    ><<    ><< ><<      ><<<<<< ><<  ><<   >< ><<><<    ><<><<     ><<><<  ><<    ><<            ><< *" << endl;
-    cout << "*  ><<       ><< ><<   ><<      ><<<<      ><<       ><< ><<    >< <<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
-    cout << "* ><<         ><<><<<<<          ><<      ><<         ><<><<      ><<><<<<<      ><<<<<   ><<      ><<><<<<<<<<  ><< <<  *" << endl;
-    cout << "**************************************************************************************************************************" << NC << endl;
+
+    cout << YEL << "\n\n\t\t**************************************************************************************************************************" << endl;
+    cout << "\t\t*      ><       ><<<<<<<    ><<<<<    ><<    ><<<<     ><<<     ><<                                                      *" << endl;
+    cout << "\t\t*     >< <<     ><<    ><<  ><<   ><< ><<  ><<    ><<  >< ><<   ><<                                                      *" << endl;
+    cout << "\t\t*    ><  ><<    ><<    ><<  ><<    ><<><<><<        ><<><< ><<  ><<                                                      *" << endl;
+    cout << "\t\t*   ><<   ><<   >< ><<      ><<    ><<><<><<        ><<><<  ><< ><<                                                      *" << endl;
+    cout << "\t\t*  ><<<<<< ><<  ><<  ><<    ><<    ><<><<><<        ><<><<   >< ><<                                                      *" << endl;
+    cout << "\t\t* ><<       ><< ><<    ><<  ><<   ><< ><<  ><<     ><< ><<    >< <<                                                      *" << endl;
+    cout << "\t\t*><<         ><<><<      ><<><<<<<    ><<    ><<<<     ><<      ><<                                                      *" << endl;
+    cout << "\t\t*       ><       ><<<<<    ><<         ><<      ><       ><<<     ><<><<<<<    ><<     ><<><<<<<<<    ><<<<<<<<  ><< <<  *" << endl;
+    cout << "\t\t*      >< <<     ><<   ><<  ><<       ><<      >< <<     >< ><<   ><<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
+    cout << "\t\t*     ><  ><<    ><<    ><<  ><<     ><<      ><  ><<    ><< ><<  ><<><<    ><<><<     ><<><<    ><<  ><<       ><<      *" << endl;
+    cout << "\t\t*    ><<   ><<   ><<    ><<   ><<   ><<      ><<   ><<   ><<  ><< ><<><<    ><<><<     ><<>< ><<      ><<<<<<     ><<    *" << endl;
+    cout << "\t\t*   ><<<<<< ><<  ><<    ><<    ><< ><<      ><<<<<< ><<  ><<   >< ><<><<    ><<><<     ><<><<  ><<    ><<            ><< *" << endl;
+    cout << "\t\t*  ><<       ><< ><<   ><<      ><<<<      ><<       ><< ><<    >< <<><<   ><< ><<     ><<><<    ><<  ><<      ><<    ><<*" << endl;
+    cout << "\t\t* ><<         ><<><<<<<          ><<      ><<         ><<><<      ><<><<<<<      ><<<<<   ><<      ><<><<<<<<<<  ><< <<  *" << endl;
+    cout << "\t\t**************************************************************************************************************************" << NC << endl;
     SLEEP_FOR_2000MS;
     SLEEP_FOR_2000MS;
 }
 void deathPrint()
 {
-    CLR_SCREEN
-    cout << "****************#*****************" << endl;
-    cout << "**************#####***************" << endl;
-    cout << "****************#*****************" << endl;
-    cout << "****************#*****************" << endl;
-    cout << "*      _         _ ) o  _   _ ) *" << endl;
-    cout << "* (_( (_) (_(   (_(  ( )_) (_(  *" << endl;
-    cout << "*   _)                (_        *" << endl;
-    cout << "*********************************" << endl;
+
+    for (int i = 2; i < 12; i++)
+    {
+        if (i % 2)
+        {
+            CLR_SCREEN
+            cout << "\n\n\t\t****************#*****************" << endl;
+            cout << "\t\t**************#####***************" << endl;
+            cout << "\t\t****************#*****************" << endl;
+            cout << "\t\t****************#*****************" << endl;
+            cout << "\t\t*      _         _ ) o  _   _ ) *" << endl;
+            cout << "\t\t* (_( (_) (_(   (_(  ( )_) (_(  *" << endl;
+            cout << "\t\t*   _)                (_        *" << endl;
+            cout << "\t\t*********************************" << endl
+                 << endl;
+            SLEEP_FOR_400MS;
+        }
+        else
+        {
+            CLR_SCREEN
+            SLEEP_FOR_100MS;
+        }
+    }
     SLEEP_FOR_2000MS;
 }

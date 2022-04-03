@@ -38,14 +38,18 @@
 #define SET_CONSOLE_TITLE printf("%c]0;%s%c", '\033', "ARDION Advanturer - the brave one", '\007');
 
 #endif
-// #define DEBUG
+//#define DEBUG
 #ifdef DEBUG
 #define SLEEP_FOR_2000MS Sleep(300)
 #define SLEEP_FOR_1000MS Sleep(190)
+#define SLEEP_FOR_400MS Sleep(510)
+#define SLEEP_FOR_100MS Sleep(45)
 #endif
 #ifndef DEBUG
 #define SLEEP_FOR_2000MS Sleep(3000)
 #define SLEEP_FOR_1000MS Sleep(1900)
+#define SLEEP_FOR_400MS Sleep(510)
+#define SLEEP_FOR_100MS Sleep(45)
 #endif
 
 #define PRESS_ANY_KEY system("pause")
