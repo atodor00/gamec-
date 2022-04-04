@@ -1,0 +1,47 @@
+Date : 2022-04-04 02:22:59
+Directory : c:\GIT\c++miniSeminar\game\
+Total : 18 files,  1645 codes, 65 comments, 195 blanks, all 1905 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         18 |      1,645 |         65 |        195 |      1,905 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                        | files      | code       | comment    | blank      | total      |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                           |         18 |      1,645 |         65 |        195 |      1,905 |
+| assets                                                      |          1 |         22 |          2 |          3 |         27 |
+| assets\basic                                                |          1 |         22 |          2 |          3 |         27 |
+| classes                                                     |          5 |        227 |         31 |         29 |        287 |
+| classes\IncrprDecript                                       |          1 |         42 |         17 |         15 |         74 |
+| townStores                                                  |          2 |        121 |          0 |         21 |        142 |
++-------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                    | language | code       | comment    | blank      | total      |
++-------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\GIT\c++miniSeminar\game\SaveLoadFun.cpp                  | C++      |         73 |          0 |         21 |         94 |
+| c:\GIT\c++miniSeminar\game\assets\basic\TitlePage.cpp       | C++      |         22 |          2 |          3 |         27 |
+| c:\GIT\c++miniSeminar\game\battleFunction.cpp               | C++      |        214 |          6 |         14 |        234 |
+| c:\GIT\c++miniSeminar\game\bestowSkillAcordingToLevel.cpp   | C++      |         87 |          0 |         10 |         97 |
+| c:\GIT\c++miniSeminar\game\classes\IncrprDecript\encdec.cpp | C++      |         42 |         17 |         15 |         74 |
+| c:\GIT\c++miniSeminar\game\classes\classEnemy.cpp           | C++      |         24 |          5 |          4 |         33 |
+| c:\GIT\c++miniSeminar\game\classes\classLivingObject.cpp    | C++      |         75 |          0 |          4 |         79 |
+| c:\GIT\c++miniSeminar\game\classes\classPlayer.cpp          | C++      |         33 |          9 |          4 |         46 |
+| c:\GIT\c++miniSeminar\game\classes\classSkill.cpp           | C++      |         53 |          0 |          2 |         55 |
+| c:\GIT\c++miniSeminar\game\defines.h                        | C++      |         62 |          4 |         17 |         83 |
+| c:\GIT\c++miniSeminar\game\functionDeclarations.cpp         | C++      |         28 |          0 |          3 |         31 |
+| c:\GIT\c++miniSeminar\game\header.h                         | C++      |         10 |          0 |          2 |         12 |
+| c:\GIT\c++miniSeminar\game\helperFunctions.cpp              | C++      |         21 |          0 |          1 |         22 |
+| c:\GIT\c++miniSeminar\game\levels.cpp                       | C++      |        445 |          6 |         42 |        493 |
+| c:\GIT\c++miniSeminar\game\printFunctions.cpp               | C++      |        230 |          0 |         17 |        247 |
+| c:\GIT\c++miniSeminar\game\source.cpp                       | C++      |        105 |         16 |         15 |        136 |
+| c:\GIT\c++miniSeminar\game\townStores\armorStore.cpp        | C++      |         74 |          0 |         12 |         86 |
+| c:\GIT\c++miniSeminar\game\townStores\healthStore.cpp       | C++      |         47 |          0 |          9 |         56 |
+| Total                                                       |          |      1,645 |         65 |        195 |      1,905 |
++-------------------------------------------------------------+----------+------------+------------+------------+------------+
